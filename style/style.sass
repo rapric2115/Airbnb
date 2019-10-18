@@ -1,0 +1,41 @@
+$bnb_color: #ff5661
+$text_primary--color: #000
+$primary_font--size: 16px
+
+
+
+html, body
+    color: $text_primary--color
+    font-size: $primary_font--size
+    font-family: 'poppins', sans-serif
+
+.container
+    /* margin-top: 5% */
+    width: 80%
+    /* padding: 0px 15px */
+    margin: 5% auto
+
+.navbar
+    display: inline-flex
+    flex-direction: row
+    width: 100%
+    justify-content: space-between
+    .logo
+        float: left
+        max-height: 50px
+        padding: 15px 30px
+        background-image: url(../images/airbnb-logo.png)
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        width: 10px
+        height: 10px
+
+ul
+    display: -ms-flexbox
+    display: flex
+    align-items: flex-ends
+
+    li
+        list-style: none
+        margin: 0px 10px
