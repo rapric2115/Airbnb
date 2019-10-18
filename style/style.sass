@@ -1,20 +1,21 @@
+/* Variables con los colores, font size */
 $bnb_color: #ff5661
 $text_primary--color: #000
 $primary_font--size: 16px
 
 
-
+/* Determinando los estilos fuentes de la página */
 html, body
     color: $text_primary--color
     font-size: $primary_font--size
     font-family: 'poppins', sans-serif
 
+/* Container para determinar ancho (width) */
 .container
-    /* margin-top: 5% */
     width: 80%
-    /* padding: 0px 15px */
     margin: 5% auto
 
+/* La Barra de Navegación estilo para Desktop */
 .navbar
     display: inline-flex
     flex-direction: row
@@ -39,3 +40,39 @@ ul
     li
         list-style: none
         margin: 0px 10px
+
+/* Para dar color a AIRBNB del h1*/
+span
+    color: $bnb_color
+
+.row-card
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    margin: 5px -15px
+
+.card
+    max-width: 18rem
+
+    figure
+        margin-inline-start: 0
+        margin-inline-end: 0
+        text-transform: uppercase
+        font-weight: bold
+        img
+            width: 16rem
+
+.home-card
+    position: relative
+    width: 100%
+    -ms-flex: 0 0 30.33333%
+    flex: 0 0 30.33333%
+    max-width: 30.33333%
+    padding: 5px
+    figure
+        margin-inline-start: 0
+        margin-inline-end: 0
+        img
+            max-width: 100%
+            height: auto
