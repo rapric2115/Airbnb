@@ -1,104 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
         <title>Airbnb website</title>
         <link rel="canonical" href="index.html">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <link rel="stylesheet" href="style/style.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    
+        <!-- Open Graph -->
+        <meta property="og:type" content="business.business">
+        <meta property="og:title" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+        <meta property="business:contact_data:street_address" content="">
+        <meta property="business:contact_data:locality" content="">
+        <meta property="business:contact_data:region" content="">
+        <meta property="business:contact_data:postal_code" content="">
+        <meta property="business:contact_data:country_name" content="">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+        <meta property="article:author" content="">
+
+
+        <!-- Twitter Card-->
+        <meta name="twitter:card" content="app">
+        <meta name="twitter:site" content="@">
+        <meta name="twitter:app:name:iphone" content="">
+        <meta name="twitter:app:id:iphone" content="">
+        <meta name="twitter:app:name:ipad" content="">
+        <meta name="twitter:app:id:ipad" content="">
+        <meta name="twitter:app:name:googleplay" content="">
+        <meta name="twitter:app:id:googleplay" content="">
     </head>
-<body>
-    <nav class="navbar">
-        <div class="logo"></div>
-        <ul class="nav">
-            <li class="nav-link">Become a Host</li>
-            <li class="nav-link">Help</li>
-            <li class="nav-link">Sign Up</li>
-            <li class="nav-link">Log In</li>
-        </ul>
-    </nav>
-    <main class="container">
-        <header>
-            <h1 class="text_primary--color">
-                <span>Airbnb</span> <br>
-                Book unique homes and <br/>
-                experience a city like a local
-            </h1>
-        </header>
-        <h3>Experiences</h3>
-        <!-- Experiences section start -->
-        <section class="row-card">
-            <div class="card">
-                <figure>
-                    <img src="images/nueva-york.jpg" alt="" class="img-fluid">
-                    <figcaption>nightlife - new york</figcaption>
-                </figure>
-                <h3>Discover the city's party scene</h3>
-                <p>$35 per person</p>
-                <span class="stars">64</span>
-            </div>
-            <div class="card">
-                <figure>
-                    <img src="images/old-man-in-the-park.jpg" alt="" class="img-fluid">
-                    <figcaption>entertainment - vancouver</figcaption>
-                </figure>
-                <h3>Discover the city's party scene</h3>
-                <p>$35 per person</p>
-                <span class="stars">1</span>
-            </div>
-            <div class="card">
-                <figure>
-                    <img src="images/photo-class-los-angeles.jpg" alt="" class="img-fluid">
-                    <figcaption>photo class - los angeles</figcaption>
-                </figure>
-                <h3>Discover the city's party scene</h3>
-                <p>$35 per person</p>
-                <span class="stars">179</span>
-            </div>
-            <div class="card">
-                <figure>
-                    <img src="images/photography-new-york.jpg" alt="" class="img-fluid">
-                    <figcaption>photography - new york</figcaption>
-                </figure>
-                <h3>Discover the city's party scene</h3>
-                <p>$35 per person</p>
-                <span class="stars">72</span>
-            </div>
-        </section>
-        <!-- Experiences section ends -->
-         <!-- Home Sections Stars -->
-         <section class="home row-card">
-            <div class="home-card">
-                <figure>
-                    <img src="images/photography-new-york.jpg" alt="" class="img-fluid">
-                    <figcaption>photography - new york</figcaption>
-                </figure>
-                <h3>Discover the city's party scene</h3>
-                <p>$35 per person</p>
-                <span class="stars">72</span>
-            </div>
-            <div class="home-card">
-                <figure>
-                    <img src="images/photography-new-york.jpg" alt="" class="img-fluid">
-                    <figcaption>photography - new york</figcaption>
-                </figure>
-                <h3>Discover the city's party scene</h3>
-                <p>$35 per person</p>
-                <span class="stars">72</span>
-            </div>
-            <div class="home-card">
-                <figure>
-                    <img src="images/photography-new-york.jpg" alt="" class="img-fluid">
-                    <figcaption>photography - new york</figcaption>
-                </figure>
-                <h3>Discover the city's party scene</h3>
-                <p>$35 per person</p>
-                <span class="stars">72</span>
-            </div>
-        </section>
-        <!-- Home Sections Ends-->
-    </main>
+    <body>
+            <nav class="navbar">
+                <div class="logo"></div>
+                <ul class="nav nav-responsive" id="navbar">
+                    <li class="nav-link">
+                       <a href="#">Become a Host</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Help</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">Log In</a>
+                    </li>
+                </ul>
+                <button id="toggle-menubar" class="display">
+                    <span class="ham-menu"></span>
+                    <span class="ham-menu"></span>
+                    <span class="ham-menu"></span>
+                </button>
+            </nav>
+        <main class="container">
+            <header>
+                <h1>
+                    <span class="airbnb">Airbnb</span> <br>                 
+                    Book unique homes and <br/> 
+                    experience a city like a local                
+                </h1>
+            </header>
+            <h3>Experiences</h3>
+            <!-- Experiences section start -->
+            <section class="row-card">
+                <div class="card">
+                    <figure>
+                        <img src="images/nueva-york.jpg" alt="" class="img-fluid">
+                        <figcaption>nightlife - new york</figcaption>
+                    </figure>
+                    <h3>Discover the city's party scene</h3>
+                    <p>$35 per person</p>
+                    <span class="stars">64</span>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="images/old-man-in-the-park.jpg" alt="" class="img-fluid">
+                        <figcaption>entertainment - vancouver</figcaption>
+                    </figure>
+                    <h3>Discover the city's party scene</h3>
+                    <p>$35 per person</p>
+                    <span class="stars">1</span>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="images/photo-class-los-angeles.jpg" alt="" class="img-fluid">
+                        <figcaption>photo class - los angeles</figcaption>
+                    </figure>
+                    <h3>Discover the city's party scene</h3>
+                    <p>$35 per person</p>
+                    <span class="stars">179</span>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="images/photography-new-york.jpg" alt="" class="img-fluid">
+                        <figcaption>photography - new york</figcaption>
+                    </figure>
+                    <h3>Discover the city's party scene</h3>
+                    <p>$35 per person</p>
+                    <span class="stars">72</span>
+                </div>
+            </section>
+            <!-- Experiences section ends -->
+            <!-- Home Sections Stars -->
+            <section class="home row-card">
+                <div class="home-card">
+                    <figure>
+                        <img src="images/photography-new-york.jpg" alt="" class="img-fluid">
+                        <figcaption>photography - new york</figcaption>
+                    </figure>
+                    <h3>Discover the city's party scene</h3>
+                    <p>$35 per person</p>
+                    <span class="stars">72</span>
+                </div>
+                <div class="home-card">
+                    <figure>
+                        <img src="images/photography-new-york.jpg" alt="" class="img-fluid">
+                        <figcaption>photography - new york</figcaption>
+                    </figure>
+                    <h3>Discover the city's party scene</h3>
+                    <p>$35 per person</p>
+                    <span class="stars">72</span>
+                </div>
+                <div class="home-card">
+                    <figure>
+                        <img src="images/photography-new-york.jpg" alt="" class="img-fluid">
+                        <figcaption>photography - new york</figcaption>
+                    </figure>
+                    <h3>Discover the city's party scene</h3>
+                    <p>$35 per person</p>
+                    <span class="stars">72</span>
+                </div>
+            </section>
+            <!-- Home Sections Ends-->
+            <!-- Banner -->
+            <section class="banner row-card">
+                <div class="col-2">
+                    <h3>Don't miss any deal</h3>
+                    <p>subscribe to our newsletter</p>
+                </div>
+                <div class="col-2 btn">
+                    <form action="">
+                        <input type="text" id="mail">
+                        <button class="btn-subscribe" onclick="subscribe()">subscribe</button>
+                    </form>
+                </div>
+            </section>
+            <!-- Banner Ends-->
+        </main>
+
+        <script src="js/mainjs.js"></script>
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyB5Aoqlt4UZw-GYm6y6Un-75s4hg8e8yvE",
+            authDomain: "testingloginregisteruser.firebaseapp.com",
+            databaseURL: "https://testingloginregisteruser.firebaseio.com",
+            projectId: "testingloginregisteruser",
+            storageBucket: "testingloginregisteruser.appspot.com",
+            messagingSenderId: "100822621025",
+            appId: "1:100822621025:web:b7e2cba820104493c38320"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+
+          console.log(firebase.database().ref('subscriptores/'));
+        </script>
+
+        <script>
+            function subscribe() {
+                var mail = document.getElementById("mail").value;
+                console.log(mail);
+                firebase.database().ref('subscriptores/').push({
+                    email: mail
+                });
+            }
+        </script>
 
 </body>
 </html>
