@@ -21,7 +21,8 @@
                                 <input type="number" placeholder="precio" id="price"> <br>
                                 <label for="imgAlt">Texto Imagen</label>
                                 <input type="text" placeholder="texto Imagen" id="imgText"> <br>
-                                <input type="file" id="img">
+                                <label for="image">Url de la imagen</label>
+                                <input type="text" id="img">
                                 <br>
                                 <button type="submit"
                                 class="btn btn-submit"
@@ -33,6 +34,7 @@
             <div class="col-3" id="post">
             </div>
         </section>
+        <a href="index.html" class="btns">Volver Página Principal</a>
     </main>
 
     <script src="js/mainjs.js"></script>
@@ -78,19 +80,27 @@
 
             function getData() {
                 firebase.database().ref('/post').once('value', function(snapshot) {
+                    if(snapshot.exists()) {
+                        var content = '';
                     snapshot.forEach(function(childSnapshot) {
                         var data = childSnapshot.val();
-                        document.getElementById('post').innerHTML = `
-                        <div class="card">
-                            <figure>
-                                <img src="${childData['image']}" alt="${childData['imgCaption']}" class="img-fluid">
-                                <figcaption>${childData['imgCaption']}</figcaption>
-                            </figure>
-                            <h3>${childData['title']}</h3>
-                            <p>${childData['precio']} per person</p>
-                            <span class="stars">72</span>
-                        </div>`
+                        var key = childSnapshot.key;
+
+                        console.log(data['Title']);
+
+                    content += '<div class="card">';
+                    content += '<figure>';
+                    content += `<img src="${data['image']}" alt="" class="img-fluid">`;
+                    content +=  '<figcaption>' + data['imgCaption'] + '</figcaption>';
+                    content += '</figure>';
+                    content += '<h3>' + data['Title'] +'</h3>';
+                    content += '<p>' + data['precio'] + 'per person' + '</p>'
+                    content += '<span class="stars">72</span>'
+                    content += '</div>'
+
+                    document.getElementById('post').innerHTML = content;
                     });
+                    }
                 })
             }
             getData();

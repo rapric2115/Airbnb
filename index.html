@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <link rel="stylesheet" href="style/style.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
-    
+
         <!-- Open Graph -->
         <meta property="og:type" content="business.business">
         <meta property="og:title" content="">
@@ -62,9 +62,9 @@
         <main class="container">
             <header>
                 <h1>
-                    <span class="airbnb">Airbnb</span> <br>                 
-                    Book unique homes and <br/> 
-                    experience a city like a local                
+                    <span class="airbnb">Airbnb</span> <br>
+                    Book unique homes and <br/>
+                    experience a city like a local
                 </h1>
             </header>
             <h3>Experiences</h3>
@@ -105,6 +105,9 @@
                     <h3>Discover the city's party scene</h3>
                     <p>$35 per person</p>
                     <span class="stars">72</span>
+                </div>
+                <div class="row-card mt-3" id="data">
+
                 </div>
             </section>
             <!-- Experiences section ends -->
@@ -162,7 +165,7 @@
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
              https://firebase.google.com/docs/web/setup#available-libraries -->
-        
+
         <script>
           // Your web app's Firebase configuration
           var firebaseConfig = {
@@ -188,6 +191,33 @@
                     email: mail
                 });
             }
+
+            function getData() {
+                firebase.database().ref('/post').once('value', function(snapshot) {
+                    if(snapshot.exists()) {
+                        var content = '';
+                    snapshot.forEach(function(childSnapshot) {
+                        var data = childSnapshot.val();
+                        var key = childSnapshot.key;
+
+                        console.log(data['Title']);
+
+                    content += '<div class="card">';
+                    content += '<figure>';
+                    content += `<img src="${data['image']}" alt="" class="img-fluid">`;
+                    content +=  '<figcaption>' + data['imgCaption'] + '</figcaption>';
+                    content += '</figure>';
+                    content += '<h3>' + data['Title'] +'</h3>';
+                    content += '<p>' + data['precio'] + 'per person' + '</p>'
+                    content += '<span class="stars">72</span>'
+                    content += '</div>'
+
+                    document.getElementById('data').innerHTML = content;
+                    });
+                    }
+                })
+            }
+            getData();
         </script>
 
 </body>
