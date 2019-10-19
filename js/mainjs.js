@@ -6,7 +6,7 @@ toggle.addEventListener('click', function() {
 })
 
 /*
-La funcion del codigo abajo es para 
+La funcion del codigo abajo es para
 que el boton de menu salga solo en mobiles
 */
 

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Airbnb Admin Page</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <h1 class="text-center">Bienvenido Admin</h1>
+        <section class="row-card">
+            <div class="col-7">
+                    <div class="form">
+                            <form action="">
+                                <label for="title">Title</label>
+                                <input type="text" placeholder="title" id="title"> <br>
+                                <label for="price">Precio</label>
+                                <input type="number" placeholder="precio" id="price"> <br>
+                                <label for="imgAlt">Texto Imagen</label>
+                                <input type="text" placeholder="texto Imagen" id="imgText"> <br>
+                                <input type="file" id="img">
+                                <br>
+                                <button type="submit"
+                                class="btn btn-submit"
+                                onclick="postit()">Postear</button>
+
+                            </form>
+                    </div>
+            </div>
+            <div class="col-3" id="post">
+            </div>
+        </section>
+    </main>
+
+    <script src="js/mainjs.js"></script>
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyB5Aoqlt4UZw-GYm6y6Un-75s4hg8e8yvE",
+            authDomain: "testingloginregisteruser.firebaseapp.com",
+            databaseURL: "https://testingloginregisteruser.firebaseio.com",
+            projectId: "testingloginregisteruser",
+            storageBucket: "testingloginregisteruser.appspot.com",
+            messagingSenderId: "100822621025",
+            appId: "1:100822621025:web:b7e2cba820104493c38320"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+
+          console.log(firebase.database().ref('post/'));
+        </script>
+
+        <script>
+            function postit() {
+                var title = document.getElementById("title").value;
+                var precio = document.getElementById('price').value;
+                var imgText = document.getElementById('imgText').value;
+                var img = document.getElementById('img').value;
+
+                firebase.database().ref('post/').push({
+                    Title: title,
+                    precio: precio,
+                    imgCaption: imgText,
+                    image: img
+                });
+                getData();
+            }
+
+            function getData() {
+                firebase.database().ref('/post').once('value', function(snapshot) {
+                    snapshot.forEach(function(childSnapshot) {
+                        var data = childSnapshot.val();
+                        document.getElementById('post').innerHTML = `
+                        <div class="card">
+                            <figure>
+                                <img src="${childData['image']}" alt="${childData['imgCaption']}" class="img-fluid">
+                                <figcaption>${childData['imgCaption']}</figcaption>
+                            </figure>
+                            <h3>${childData['title']}</h3>
+                            <p>${childData['precio']} per person</p>
+                            <span class="stars">72</span>
+                        </div>`
+                    });
+                })
+            }
+            getData();
+        </script>
+</body>
+</html>

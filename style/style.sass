@@ -11,13 +11,13 @@ $small_font--size: 0.688rem    // 11px
 
 
 
-html, body 
+html, body
     color: $text_primary--color
     font-size: $primary_font--size
     font-family: 'poppins', sans-serif
 
 .container
-    width: 80%
+    width: 85%
     margin: 5% auto
     h1
         font-size: 2.663rem
@@ -31,7 +31,7 @@ html, body
     flex-direction: row
     width: 100%
     justify-content: space-between
-    .logo 
+    .logo
         float: left
         max-height: 50px
         padding: 15px 30px
@@ -54,18 +54,18 @@ ul
         color: #484848
         text-decoration: none
 
-.airbnb 
+.airbnb
         color: $bnb_color
 
-.row-card 
+.row-card
     display: -ms-flexbox
-    display: flex  
-    -ms-flex-wrap: wrap 
+    display: flex
+    -ms-flex-wrap: wrap
     flex-wrap: wrap
     margin: 5px -15px
     margin-bottom: 3.125rem
 
-.card 
+.card
     max-width: 15.188rem
     max-height: 15.813rem
     margin: 1rem
@@ -78,25 +78,25 @@ ul
     p
         font-size: $secundary_font--size
 
-    figure 
-        margin-inline-start: 0 
+    figure
+        margin-inline-start: 0
         margin-inline-end: 0
         text-transform: uppercase
         font-weight: 600
         font-size: $small_font--size
         img
-            width: 16rem 
+            width: 16rem
 .home
     margin-top: 5rem
 
-.home-card  
+.home-card
     position: relative
     width: 100%
     -ms-flex: 0 0 30.33333%
     flex: 0 0 30.33333%
     max-width: 30.33333%
     padding: 5px
-    figure  
+    figure
         margin-inline-start: 0
         margin-inline-end: 0
         text-transform: uppercase
@@ -112,7 +112,7 @@ ul
     p
         font-size: $secundary_font--size
 
-.col-2 
+.col-2
     -ms-flex: 0 0 50%
     flex: 0 0 50%
     max-width: 50%
@@ -125,7 +125,7 @@ ul
     p
         font-size: 1.4em
 
-.banner 
+.banner
     margin-top: 4rem
 
 .btn
@@ -162,13 +162,27 @@ ul
 
 .none
     display: none !important
-   
-    
-        
 
-@media (max-width: 575px) 
-    
-    .container 
+/* Admin Section */
+.col-7
+    -ms-flex: 0 0 70%
+    flex: 0 0 70%
+    max-width: 70%
+
+form
+    background-color: #fcfcfc
+
+.btn-submit
+    background-color: $bnb_color
+    color: #ffffff
+
+.text-center
+    text-align: center
+
+
+@media (max-width: 575px)
+
+    .container
         h1
             font-size: 2rem
 
@@ -179,7 +193,7 @@ ul
     .col-2
         -ms-flex: 0 0 100%
         flex: 0 0 100%
-        max-width: 100%            
+        max-width: 100%
     .card
         figure
             img
@@ -189,8 +203,7 @@ ul
             display: inline
             flex-wrap: wrap
 
-    .nav-responsive 
+    .nav-responsive
         display: none
 
 
-    
